@@ -18,14 +18,14 @@ jobs:
           java-version: '17'
       - uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '7.6.4'
+          gradle-version: '8.4'
       - name: Build sideloadable APK
         run: gradle :app:assembleDebug
       - name: Verify APK
         run: test -s app/build/outputs/apk/debug/app-debug.apk
       - uses: actions/upload-artifact@v4
         with:
-          name: Rushall-Olympic-Girls-v1.0.0
+          name: Rushall-Olympic-Girls-v1.1.0-OneSignal
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 30
