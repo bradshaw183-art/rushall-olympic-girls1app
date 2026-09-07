@@ -25,6 +25,7 @@ public class MainActivity extends Activity {
         webView = new WebView(this);
         webView.setBackgroundColor(Color.rgb(7, 7, 7));
         setContentView(webView);
+        OneSignalManager.getInstance().setupPushSubscriptionObserver(this);
 
         WebSettings s = webView.getSettings();
         s.setJavaScriptEnabled(true);
